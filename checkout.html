@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+
+    body{
+        margin:0;
+        font-family:sans-serif;
+        background: #f2f2f2;
+
+    }
+
+
+    /**
+    * ? Checkout section styles
+    **/
+
+    .checkout-header{
+
+            background-color: #333;
+            color: #fff;
+            font-size: 250%;
+            text-align: center;
+            padding:2rem;
+            border-radius:40px;
+            margin-left : 50px;
+            margin-right: 50px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            
+        }
+
+    .checkout-section{
+        border-radius:40px;
+        margin-left: 50px;
+        margin-right: 50px;
+        padding:10px;
+        display:block;
+        height: auto;
+        width: auto;
+        background-color: #c2c7c4;
+    }
+    
+    .personal-details
+    {
+        padding:50px;
+        border-radius:20px;
+        margin-bottom:50px;
+        background-color: #d7e6dd;
+    }
+    .bank-details
+    {
+        padding:50px;
+        border-radius:20px;
+        margin-top: 20px;
+        margin-bottom:50px;
+        background-color: #d7e6dd;
+    }
+
+    .hidden-invoice
+    {
+        padding:50px;
+        border-radius:20px;
+        margin-top: 20px;
+        margin-bottom:50px;
+        background-color: #d7e6dd;
+    }
+
+    .input-data
+    {
+        padding:10px;
+        background-color: #c2c7c4 ;
+        margin-top: 15px;
+        margin-bottom: 5px;
+        margin-left: 5px;
+        margin-right: 5px;
+        border-radius:20px;
+        
+    }
+
+    .input-data1{
+
+        padding:10px;
+        background-color: #c2c7c4 ;
+        margin-top: 15px;
+        margin-bottom: 5px;
+        margin-left: 5px;
+        margin-right: 5px;
+        border-radius:20px;
+
+    }
+
+    .card-details{
+        padding:10px;
+        margin-bottom: 10px;
+        margin-left:10px;
+        margin-top:0px;
+    }
+
+    input[type=text],input[type=email],input[type=tel]
+    {
+        width: 90%;
+        padding: 12px;
+        border: 1px solid #adabab;
+        border-radius: 4px;
+        background-color: #f2f2f2;
+        resize: vertical;  
+    }
+
+    .checkout-button
+    {
+        padding: 10px;
+        background-color: #ffffff;
+        box-shadow: #f2f2f2;
+        border-radius:10px;
+        border-color:#adabab ;
+        font-size: 15px;
+
+    }
+
+    .input-Button-data{
+        padding-top:25px;
+        margin-left: 5px;    
+    }
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=text] {
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+</style>
+
+
+</head>
+
+ <body>
+
+    <!--Checkout section-->
+    <div class="checkout-container" style="display:block;">
+            <header class="checkout-header"> checkout </header>
+            <div class="checkout-section">
+                
+                <!--  Payment form  -->
+                <div class="payment-form" >  
+
+                    <center><h1> <i>Payment Details</i> </h1></center>
+                    <div id="editcase" class="editcase"></div><br>
+
+                    <!-- <button onclick="showSection()" class="personal-details-button">Edit Personal Details</button><br> -->
+
+                    <!--  get all personal details input  -->
+                    <div class="personal-details" style="display: block;">
+
+                        <h2> &nbsp; Personal Details</h2>  
+
+                        <div class="input-data">
+
+                           <label for="first-name">First Name *:</label>
+                           <input type="text" id="first-name" name="first-name" placeholder="Enter your first name" required>
+
+                        </div>
+
+                        <div class="input-data">
+
+                           <label for="last-name">Last Name *:</label>
+                           <input type="text" id="last-name" name="last-name" placeholder="Enter your last name" required>
+
+                        </div>
+
+                        <div class="input-data">
+
+                           <label for="email">E-mail *&nbsp; &nbsp; &nbsp; &nbsp;:</label>
+                           <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                        </div>
+
+                        <div class="input-data">
+
+                            <label for="Adress">Address *&nbsp;&nbsp; &nbsp;:</label>
+                            <input type="text" id="Adress" name="Adress" placeholder="Enter your Adress" required>
+
+                        </div>
+
+                        <div class="input-data">
+
+                            <label for="phone">Phone No * :</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+                        </div>
+
+                        <div class="input-Button-data">
+
+                            <button onclick="editcase()" class="checkout-button">save</button> 
+                            <button onclick="hideSection()" style="margin-left: 90%;" class="checkout-button">cancel</button>
+
+                        </div>
+
+                    </div>
+
+                <!-- get all bank details input-->
+
+                <div class="bank-details">
+                    <h2>  &nbsp;  &nbsp; Bank details</h2>
+
+                        <!--  card details section  -->
+                        <div class="card-details">     
+                          <br>&nbsp;<img src="\image\bankCards.png" alt="bankCards">
+
+                          <div class="input-data">
+
+                            <label for="name-on-card">Name on Card *:</label>
+                            <input type="text" id="name-on-card" name="name-on-card" placeholder="Enter your name" required>
+
+                          </div >
+
+                          <div class="input-data">
+
+                            <label for="card-number">Card Number *:</label>
+                            <input type="text" id="card-number" name="card-number" placeholder="Enter your card number" required>
+
+                          </div>
+
+                            <div class="input-data1">
+
+                                <label for="expire-month">Expire Month *:</label>
+                                <input type="number" id="expire-month" name="expiration-month" min="1" max="12" placeholder="MM" required>
+                   
+                            </div>
+
+
+                            <div class="input-data1">
+
+                                <label for="expire-year">Expire Year *:</label>
+                                <input type="Number" id="expire-year" name="expiration-year" min="2023" max="2030" placeholder="YYYY" required>
+                          
+                            </div>
+
+                            <div class="input-data1">
+
+                                <label for="cvv">CVV *:</label>
+                                <input type="Number" id="cvv" name="cvv" min="000" max="999" placeholder="CVV" required>
+                          
+                            </div>
+                            
+                          <button id="save-btn" style="display:none;">Save</button>
+                        </div>
+                      
+                    
+                        <div class="input-Button-data">
+                            <button type="submit" id="confirm-btn" class="checkout-button">Confirm</button>  <!--  click confirm button generate invoice  -->
+                            <button type="reset" id="reset" style="margin-left:80%;" class="checkout-button">Reset</button>
+                        </div>
+                    </div>
+
+                </div>
+
+               <!-- invoice -->
+                <div id="invoice-container"> </div>
+
+
+
+            </div>
+    </div>
+    
+ </body>
+</html> 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ <!--
+        #00A6ED (Deep Sky Blue)
+    #FF5A5F (Coral Red)
+    #39A2DB (Steel Blue)
+    #FFC857 (Goldenrod Yellow)
+Secondary Color:
+
+#FFD166 (Pastel Orange)
+#06D6A0 (Turquoise)
+#D4F2DB (Mint Green)
+#F8AFA6 (Blush Pink)
+Accent Color:
+
+#FF847C (Salmon Pink)
+#74C69D (Sea Green)
+#FFC9A5 (Peach)
+#9A77B8 (Lavender)-->
